@@ -17,6 +17,8 @@ A efectos de mantener la versión con la que se comenzó a trabajar, conviene ut
 
 `$ source venv/bin/activate`
 
+---
+
 ### c. Creación de un paquete </h3>
 Paquete: subdirectorio que tiene un archivo *\_\_init_\_\.py*
 
@@ -25,7 +27,7 @@ Se lo puede importar.
 >microblog/app/\_\_init\_\_.py: instancia de la aplicación Flask
 
 ```
-from flask import Flask
-app = Flask(__name__)
-from app import routes
+from flask import Flask ====> importa la clase "Flask" del paquete flask
+app = Flask(__name__) ====> crea la instancia de la clase Flask con el nombre "app".
+from app import routes ====> desde el módulo "app" (el paquete creado en el directorio, no la instancia creada en la línea anterior) importa routes.py
 ```
